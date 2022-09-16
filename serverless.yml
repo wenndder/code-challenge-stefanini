@@ -1,0 +1,47 @@
+org: wenndder
+app: aws-code-challenge
+service: code-challenge-stefanini
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  httpApi:
+    cors: true
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  createEmployee:
+    handler: handler.createEmployee
+    events:
+      - httpApi:
+          path: /employee
+          method: post
+
+  updateEmployee:
+    handler: handler.updateEmployee
+    events:
+      - httpApi:
+          path: /employee/{id}
+          method: put
+
+  deleteEmployee:
+    handler: handler.deleteEmployee
+    events:
+      - httpApi:
+          path: /employee/{id}
+          method: delete
+
+  getEmployee:
+    handler: handler.getEmployee
+    events:
+      - httpApi:
+          path: /employee/{id}
+          method: get

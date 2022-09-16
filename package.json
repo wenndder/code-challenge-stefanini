@@ -1,0 +1,27 @@
+{
+  "name": "code-challenge-stefanini",
+  "version": "1.0.0",
+  "description": "Code Challenge Stefanini - Made by Douglas Wender",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenndder/code-challenge-stefanini.git"
+  },
+  "author": "Douglas Wender Antunes Isidoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenndder/code-challenge-stefanini/issues"
+  },
+  "homepage": "https://github.com/wenndder/code-challenge-stefanini#readme",
+  "devDependencies": {
+    "serverless-offline": "^10.0.2"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.9.1",
+    "mongoose": "^6.6.1"
+  }
+}
