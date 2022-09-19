@@ -1,58 +1,20 @@
-# Serverless Framework AWS NodeJS Example
+# Váriaveis de ambiente:
 
-This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
+As váriaveis de ambiente estão definidas dentro do .env utilizando as credenciais das minhas contas do mongo e aws. Sendo elas: MONGO_URL, AWS_ACCESS_KEY_ID e AWS_SECRET_ACCESS_KEY.
 
-## Usage
+# Para fazer deploy:
 
-### Deployment
+serverless deploy
 
-In order to deploy the example, you need to run the following command:
+# Para rodar os testes:
 
-```
-$ serverless deploy
-```
+npm test
 
-After running deploy, you should see output similar to:
+# Organização do diretório:
 
-```bash
-Deploying aws-node-project to stage dev (us-east-1)
+O schema da entidade funcionário(employee) está definida dentro de src/models/Employee.
+As rotas de inserção, deleção, recuperação e alteração do banco estão definidas dentro de src/routes/employees.
+Os testes estão definidos dentro de src/tests.
+A função de conexão do banco está definida dentro de src/handler.js.
+As configurações dos lambdas serverless AWS estão dentro do serverless.yml.
 
-✔ Service deployed to stack aws-node-project-dev (112s)
-
-functions:
-  hello: aws-node-project-dev-hello (1.5 kB)
-```
-
-### Invocation
-
-After successful deployment, you can invoke the deployed function by using the following command:
-
-```bash
-serverless invoke --function hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": {}\n}"
-}
-```
-
-### Local development
-
-You can invoke your function locally by using the following command:
-
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
-
-```
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```

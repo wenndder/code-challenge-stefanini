@@ -1,10 +1,11 @@
 {
+  "type": "module",
   "name": "code-challenge-stefanini",
   "version": "1.0.0",
   "description": "Code Challenge Stefanini - Made by Douglas Wender",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,10 @@
   },
   "homepage": "https://github.com/wenndder/code-challenge-stefanini#readme",
   "devDependencies": {
-    "serverless-offline": "^10.0.2"
+    "jest": "^29.0.3"
   },
   "dependencies": {
-    "express": "^4.18.1",
+    "dotenv": "^16.0.2",
     "mongodb": "^4.9.1",
     "mongoose": "^6.6.1"
   }
